@@ -16,6 +16,8 @@ fastapi = "*"
 pandas = "*"
 uvicorn = "*"
 plotly = "*"
+jupyterlab = "*"
+black = "*"
 
 [requires]
 python_version = "3.8"
