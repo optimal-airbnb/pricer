@@ -1,10 +1,15 @@
 from fastapi import APIRouter, HTTPException
 import pandas as pd
 import plotly.express as px
+import os
 
 router = APIRouter()
 
-df = pd.read_csv("assets/clean_rent.csv")
+fd = os.path.join(os.path.dirname(__file__), "..",
+                                     "assets",
+                                     "clean_rent.csv")
+df = pd.read_csv(fd)
+
 
 @router.get('/map')
 async def visual():
