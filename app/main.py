@@ -5,10 +5,9 @@ import uvicorn
 from app.api import predict, viz
 
 app = FastAPI(
-    title='World Metrics DS API',
-    description='Visualize world metrics from Gapminder data',
-    version='0.1',
-    docs_url='/',
+    title="Optimal AirBnB API",
+    description="Outputs the rental price prediciton in JSON format",
+    version="0.1", docs_url="/",
 )
 
 app.include_router(predict.router)
