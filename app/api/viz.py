@@ -4,6 +4,22 @@ import plotly.express as px
 
 router = APIRouter()
 
+@router.post("/test_graph")
+def visual():
+  """practice visual to test the heroku deployment """
+  dataframe = px.data.gapminder().rename(columns={
+      'year': 'Year', 
+      'lifeExp': 'Life Expectancy', 
+      'pop': 'Population', 
+      'gdpPercap': 'GDP Per Capita'
+  })
+
+  country = 'United States'
+  metric = 'Life Expectancy'
+  subset = dataframe[dataframe.country == country]
+  fig = px.line(subset, x='Year', y=metric, title=f'{metric} in {country}')
+  show_me = fig.show()
+  return print(show_me), fig.to_json() 
 
 @router.get("/viz/{statecode}")
 async def viz(statecode: str):
@@ -91,3 +107,5 @@ async def viz(statecode: str):
 
     # Return Plotly figure as JSON string
     return fig.to_json()
+
+
