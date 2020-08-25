@@ -18,6 +18,7 @@ uvicorn = "*"
 plotly = "*"
 jupyterlab = "*"
 black = "*"
+joblib = "*"
 
 [requires]
 python_version = "3.8"

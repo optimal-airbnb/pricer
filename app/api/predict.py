@@ -4,6 +4,7 @@ import random
 from fastapi import APIRouter
 import pandas as pd
 from pydantic import BaseModel, Field, validator
+from joblib import load
 
 log = logging.getLogger(__name__)
 router = APIRouter()
@@ -23,5 +24,6 @@ class AirBnB(BaseModel):
 async def predict(AirBnB: AirBnB):
     """Predict AirBnB prices in NYC."""
     X_new = AirBnB.to_df()
-    y_pred = 200000
+    pipeline = load("assets/rf_reg.joblib")
+    y_pred = pipeline.predict(X_new)[0]
     return {'predicted_price $': y_pred}
