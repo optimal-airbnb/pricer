@@ -61,4 +61,4 @@ for i in range(len(rlist1)):
 
 print(BoroughDict["Brooklyn"])
 print(NeighbourhoodDict["Kensington"])
-print(RoomTypeDict["Private room"])
+print(RoomTypeDict)
