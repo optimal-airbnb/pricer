@@ -34,7 +34,7 @@ async def predict(AirBnB: AirBnB):
     """Predict AirBnB prices in NYC."""
     #AirBnB.map()
     #df = AirBnB.to_df()
-    data = [2, 109, 2, 1, 365]
+    data = [[2, 109, 2, 1, 365]]
     columns = ['Borough', 'Neighbourhood', 'Room_type', 'Minimum_nights', 'Availability_365']
     df = pd.DataFrame(data, columns = columns)
     pipeline = load(filepath)
