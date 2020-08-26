@@ -32,4 +32,6 @@ async def visual():
                     height=1000, 
                     margin={"r":1,"t":1,"l":1,"b":1})
 
+      # Show Graphic
+    fig.show();
     return fig.to_json()
