@@ -41,4 +41,4 @@ async def predict(AirBnB: AirBnB):
     df = AirBnB.to_df()
     pipeline = load(filepath)
     y_pred = pipeline.predict(df)
-    return {'predicted_price $': y_pred[0]}
+    return {'predicted_price ': '$' + y_pred[0]}
